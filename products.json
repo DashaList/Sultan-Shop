@@ -1,0 +1,254 @@
+{
+  "count": 10,
+  "results": [
+    {
+      "imgUrl": "src/assets/img/products/product_1.jpg",
+      "name": "Средство для мытья посуды Crystal",
+      "sizeType": "Volume",
+      "size": 450,
+      "barcode": 1,
+      "manufacturer": "Нэфис",
+      "brand": "AOS",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 48.76,
+      "careTypes": [
+        "Уход за посудой",
+        "Уход за кухней"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_2.jpg",
+      "name": "Автомат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
+      "sizeType": "Volume",
+      "size": 65,
+      "barcode": 2,
+      "manufacturer": "Grifon",
+      "brand": "ARIEL",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 50.76,
+      "careTypes": [
+        "Уход за бельём"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_3.jpg",
+      "name": "Порошок стиральный Автомат 100 пятен COMPACT",
+      "sizeType": "Weight",
+      "size": 700,
+      "barcode": 3,
+      "manufacturer": "Grifon",
+      "brand": "BIMAX",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 12.76,
+      "careTypes": [
+        "Уход за бельём"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_4.jpg",
+      "name": "Набор косметики Солнечная Вербена",
+      "sizeType": "Weight",
+      "size": 30,
+      "barcode": 4,
+      "manufacturer": "Нэфис",
+      "brand": "L'Occitane Verveine ",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 666.99,
+      "careTypes": [
+        "Уход за телом",
+        "Уход за руками",
+        "Уход за лицом"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_5.jpg",
+      "name": "Капсулы Tide + Fairy Эффект для цветного",
+      "sizeType": "Volume",
+      "size": 15,
+      "barcode": 5,
+      "manufacturer": "Boyscout",
+      "brand": "Tide",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 100.67,
+      "careTypes": [
+        "Уход за бельём"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_6.jpg",
+      "name": "Средство для стирки жидкое ласка для темного эффект восстановления",
+      "sizeType": "Volume",
+      "size": 450,
+      "barcode": 6,
+      "manufacturer": "Elit",
+      "brand": "Ласка",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 459.5,
+      "careTypes": [
+        "Уход за бельём"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_7.jpg",
+      "name": "Шампунь Service Line Daily pH 5.5 для ежедневного применения",
+      "sizeType": "Volume",
+      "size": 500,
+      "barcode": 7,
+      "manufacturer": "Нэфис",
+      "brand": "OLLIN Professional",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 627.29,
+      "careTypes": [
+        "Уход за волосами"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_8.jpg",
+      "name": "Зубная паста Perioe Pumping citrus",
+      "sizeType": "Weight",
+      "size": 100,
+      "barcode": 8,
+      "manufacturer": "Elit",
+      "brand": "Perioe",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 780,
+      "careTypes": [
+        "Уход за полостью рта"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_9.jpg",
+      "name": "Антиперспирант ролик Men Черное и белое Невидимый Original",
+      "sizeType": "Weight",
+      "size": 35,
+      "barcode": 9,
+      "manufacturer": "Elit",
+      "brand": "Nivea",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 892.53,
+      "careTypes": [
+        "Уход за телом"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_10.jpg",
+      "name": "Крем для рук и тела Пачули и ароматный бергамот",
+      "sizeType": "Weight",
+      "size": 178,
+      "barcode": 10,
+      "manufacturer": "Elit",
+      "brand": "Synergetic",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 894.34,
+      "careTypes": [
+        "Уход за телом",
+        "Уход за руками"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_11.jpg",
+      "name": "Care Крем для лица ночной с провитамином B5",
+      "sizeType": "Volume",
+      "size": 65,
+      "barcode": 11,
+      "manufacturer": "Ipsum",
+      "brand": "Nivea",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 23.54,
+      "careTypes": [
+        "Уход за телом",
+        "Уход за лицом"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_12.jpg",
+      "name": "Бальзам для губ Вишневое сияние",
+      "sizeType": "Weight",
+      "size": 8.9,
+      "barcode": 12,
+      "manufacturer": "Нэфис",
+      "brand": "Nivea",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 90.25,
+      "careTypes": [
+        "Уход за телом",
+        "Уход за губами",
+        "Уход за лицом"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_13.jpg",
+      "name": "Бальзам для губ Cicaplast",
+      "sizeType": "Weight",
+      "size": 15,
+      "barcode": 13,
+      "manufacturer": "Ipsum",
+      "brand": "La Roche-Posay",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 390.54,
+      "careTypes": [
+        "Уход за телом",
+        "Уход за губами",
+        "Уход за лицом"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_14.jpg",
+      "name": "мужской дезодорант спрей Кожа и Печеньки, 48 часов защиты",
+      "sizeType": "Weight",
+      "size": 440,
+      "barcode": 14,
+      "manufacturer": "Ipsum",
+      "brand": "AXE",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 25.78,
+      "careTypes": [
+        "Уход за телом"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_15.jpg",
+      "name": "Средство для мытья посуды Нежные руки Чайное Дерево и Мята",
+      "sizeType": "Volume",
+      "size": 23,
+      "barcode": 15,
+      "manufacturer": "Grifon",
+      "brand": "Fairy",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 267.65,
+      "careTypes": [
+        "Уход за кухней",
+        "Уход за руками"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_16.jpg",
+      "name": "Чистящее средство для кухни Azelit Анти-жир Grass",
+      "sizeType": "Volume",
+      "size": 120,
+      "barcode": 16,
+      "manufacturer": "Grifon",
+      "brand": "Grass",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 335.60,
+      "careTypes": [
+        "Уход за кухней"
+      ]
+    },
+    {
+      "imgUrl": "src/assets/img/products/product_17.jpg",
+      "name": "Кондиционер для белья Миндальное молочко",
+      "sizeType": "Volume",
+      "size": 1000,
+      "barcode": 17,
+      "manufacturer": "Нэфис",
+      "brand": "Synergetic",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+      "price": 56.78,
+      "careTypes": [
+        "Уход за бельём",
+        "Уход за руками"
+      ]
+    }
+  ]
+}
