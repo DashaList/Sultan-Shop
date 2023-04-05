@@ -6,7 +6,6 @@ import style from './Product.module.scss';
 import p1 from '../../assets/img/products/product_1.jpg'
 import p2 from '../../assets/img/products/product_2.jpg'
 import p3 from '../../assets/img/products/product_3.jpg'
-import p4 from '../../assets/img/products/product_4.jpg'
 import p5 from '../../assets/img/products/product_5.jpg'
 import p6 from '../../assets/img/products/product_6.jpg'
 import p7 from '../../assets/img/products/product_7.jpg'
