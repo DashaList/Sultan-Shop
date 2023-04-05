@@ -31,7 +31,7 @@
       ]
     },
     {
-      "imgUrl": "src/assets/img/products/product_3.jpg",
+      "imgUrl": "./src/assets/img/products/product_3.jpg",
       "name": "Порошок стиральный Автомат 100 пятен COMPACT",
       "sizeType": "Weight",
       "size": 700,
