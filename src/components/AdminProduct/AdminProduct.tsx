@@ -5,6 +5,8 @@ import Button from '../UI/Button/Button';
 import style from './AdminProduct.module.scss';
 import deleteIcon from '../../assets/img/svg/delete-icon.svg'
 import editIcon from '../../assets/img/svg/edit.svg'
+import VolumeIcon from '../../assets/img/svg/Volume-icon.svg'
+import WeightIcon from '../../assets/img/svg/Weight-icon.svg'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import {adminSlice} from '../../store/reducers/adminSlice';
 import { PRODUCT_ROUTE } from '../../utils/consts';
@@ -48,7 +50,8 @@ const AdminProduct: React.FC<AdminProductProps> = ({product}) => {
         </div>
         <div className={style.size}>
           <div className="">
-            <img src={`/src/assets/img/svg/${product.sizeType}-icon.svg`} alt="" />
+            {product.sizeType == 'Volume' && <img src={VolumeIcon} alt="" />}
+            {product.sizeType == 'Weight' && <img src={WeightIcon} alt="" />}
           </div>
           <span>{size}</span>
         </div>

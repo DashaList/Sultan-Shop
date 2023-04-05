@@ -7,6 +7,8 @@ import { IProduct, ProductResponse } from '../types/types'
 import { fetchProducts } from '../store/actions/productActions'
 import style from './ProductPage.module.scss'
 import '../App/App.scss'
+import VolumeIcon from '../assets/img/svg/Volume-icon.svg'
+import WeightIcon from '../assets/img/svg/Weight-icon.svg'
 import basketIcon from '../assets/img/svg/basket-white.svg'
 import share from '../assets/img/svg/share-icon.svg'
 import download from '../assets/img/svg/download-black.svg'
@@ -89,7 +91,8 @@ const ProductPage = () => {
           </h2>
           <div className={style.size}>
             <div className="">
-              <img src={`/src/assets/img/svg/${product?.sizeType}-icon.svg`} alt="" />
+            {product?.sizeType == 'Volume' && <img src={VolumeIcon} alt="" />}
+            {product?.sizeType == 'Weight' && <img src={WeightIcon} alt="" />}
             </div>
             <span>{size}</span>
           </div>

@@ -4,6 +4,8 @@ import { IProduct } from '../../types/types';
 import Button from '../UI/Button/Button';
 import style from './BasketProduct.module.scss'
 import deleteIcon from '../../assets/img/svg/delete-icon.svg'
+import VolumeIcon from '../../assets/img/svg/Volume-icon.svg'
+import WeightIcon from '../../assets/img/svg/Weight-icon.svg'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import {basketSlice} from '../../store/reducers/basketSlice';
 import { PRODUCT_ROUTE } from '../../utils/consts';
@@ -49,7 +51,8 @@ const BasketProduct: React.FC<BasketProductProps> = ({product}) => {
             <div className={style.content}>
                 <div className={style.size}>
                     <div className="">
-                        <img src={`/src/assets/img/svg/${product.sizeType}-icon.svg`} alt="" />
+                        {product.sizeType == 'Volume' && <img src={VolumeIcon} alt="" />}
+                        {product.sizeType == 'Weight' && <img src={WeightIcon} alt="" />}
                     </div>
                     <span>{size}</span>
                 </div>
