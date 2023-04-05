@@ -3,22 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { IProduct} from '../../types/types';
 import Button from '../UI/Button/Button';
 import style from './Product.module.scss';
-import p1 from '../../assets/img/products/product_1.jpg'
-import p2 from '../../assets/img/products/product_2.jpg'
-import p3 from '../../assets/img/products/product_3.jpg'
-import p5 from '../../assets/img/products/product_5.jpg'
-import p6 from '../../assets/img/products/product_6.jpg'
-import p7 from '../../assets/img/products/product_7.jpg'
-import p8 from '../../assets/img/products/product_8.jpg'
-import p9 from '../../assets/img/products/product_9.jpg'
-import p10 from '../../assets/img/products/product_10.jpg'
-import p11 from '../../assets/img/products/product_11.jpg'
-import p12 from '../../assets/img/products/product_12.jpg'
-import p13 from '../../assets/img/products/product_13.jpg'
-import p14 from '../../assets/img/products/product_14.jpg'
-import p15 from '../../assets/img/products/product_15.jpg'
-import p16 from '../../assets/img/products/product_16.jpg'
-import p17 from '../../assets/img/products/product_17.jpg'
 import VolumeIcon from '../../assets/img/svg/Volume-icon.svg'
 import WeightIcon from '../../assets/img/svg/Weight-icon.svg'
 import basketIcon from '../../assets/img/svg/basket-white.svg'

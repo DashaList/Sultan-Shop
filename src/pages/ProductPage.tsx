@@ -80,7 +80,7 @@ const ProductPage = () => {
       <div className={style.ProductPage}>
 
         <div className={style.photo}>
-          <img src={`/${product?.imgUrl}`} alt="" />
+          <img src={product?.imgUrl} alt="" />
         </div>
 
         <div className={style.content}>
