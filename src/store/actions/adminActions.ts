@@ -6,7 +6,7 @@ import {adminSlice} from "../reducers/adminSlice";
 export const fetchAdminProducts = () => async (dispatch: AppDispatch) => {
     try {
         dispatch(adminSlice.actions.adminProductsFetching())
-        const response = await axios.get<ProductResponse>('./Sultan-Shop/products.json')
+        const response = await axios.get<ProductResponse>('./products.json')
         dispatch(adminSlice.actions.adminProductsFetchingSuccess({
             products: response.data.results
         }))
