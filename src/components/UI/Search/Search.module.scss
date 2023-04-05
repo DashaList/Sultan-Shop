@@ -1,0 +1,36 @@
+@import '../../../App/vars.scss';
+
+.Search {
+    position: relative;
+    max-width: 700px;
+    //width: fit-content;
+
+    input[type=text] {
+        position: relative;
+        display: block;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        height: 57px;
+        width: 100%;
+        max-width: 700px;
+        //max-width: 263px;
+        background: #EDEDED;
+        border-radius: 36px;
+        padding: 20px;
+    }
+    
+    button {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 39px;
+        height: 39px;
+        background: $yellow_light url(../../../assets/img/svg/search-light.svg) no-repeat center;
+        border-radius: 50%;
+    }
+    .btn:hover {
+        background: $yellow_dark url(../../../assets/img/svg/search-light.svg) no-repeat center;
+    }
+    
+}

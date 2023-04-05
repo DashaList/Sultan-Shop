@@ -1,0 +1,90 @@
+@import '.././App/vars.scss';
+
+.Catalog {
+    .main {
+        display: flex;
+        justify-content: space-between;
+        gap: 8%;
+
+        @media (max-width: 900px) {
+            flex-direction: column;
+        }
+    }
+    .left {
+        width: 18%;
+
+        @media (max-width: 900px) {
+            width: 100%;
+        }
+    }
+    .content {
+        width: 74%;
+
+        @media (max-width: 900px) {
+            width: 100%;
+        }
+    }
+
+    .titleSort {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+
+        h1 {
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 120%;
+            text-transform: uppercase;
+
+            @media (max-width: 900px) {
+                font-size: 20px;
+            }
+        }
+    }
+    .sort {
+        margin-top: 25px;
+        margin-bottom: 35px;
+        
+        span{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 150%;
+            margin-right: 5px;
+        }
+        select {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: $grey_dark;
+        }
+        select:focus {
+            outline: none;
+        }
+    }
+
+    .careType {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: $grey_dark;
+        margin-bottom: 50px;
+
+        @media (max-width: 1000px) {
+            flex-wrap: wrap;
+        }
+    }
+    .careItem {
+        padding: 20px;
+        box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+        border-radius: 10px;
+    }
+    .careItem.active {
+        background: rgba($color: $yellow_light, $alpha: 0.3);
+    }
+}

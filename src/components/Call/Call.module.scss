@@ -1,0 +1,56 @@
+@import '../../App/vars.scss';
+
+.Call {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+
+    @media (max-width: 1250px) {
+        display: none;
+    }
+
+    .tel {
+        display: block;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 150%;
+        margin-bottom: 3px;
+    }
+
+    .workTime {
+        display: block;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 150%;
+        color: $grey_dark;
+        margin-bottom: 3px;
+    }
+
+    .makeCall {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 150%;
+        color: $grey_dark;
+        border-bottom: 1px solid $grey_dark;
+    }
+    
+    .photo {
+        width: 70px;
+        height: 92px;
+    }
+    .photo.active {
+        position: relative;
+    }
+    .photo.active::after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        top: 28px;
+        right: 6px;
+        background: #1FD85D;
+        box-shadow: 0 0 0 2px #F0F6FA;
+        border-radius: 50%;
+    }
+}

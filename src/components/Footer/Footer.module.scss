@@ -1,0 +1,160 @@
+@import '../../App/vars.scss';
+
+.Footer {
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    background: $grey_dark;
+    color: white;
+    padding-top: 70px;
+    padding-bottom: 115px;
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        @media (max-width: 1000px) {
+            flex-direction: column;
+            max-width: 700px;
+            //align-items: start;
+        }
+
+    .logoGroup {
+        max-width: 23%;
+
+        @media (max-width: 1000px) {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .logoPrice {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .logo {
+            margin-bottom: 15px;
+        }
+    
+        .desc {
+            margin-bottom: 45px;
+        }
+
+        .subscribe {
+            display: block;
+            font-weight: 400;
+            font-size: 12px;
+            margin-bottom: 14px;
+        }
+
+        .email {
+            max-width: 282px;
+            position: relative;
+
+            @media (max-width: 1000px) {
+                width: 100%;
+                max-width: 700px;
+                margin-bottom: 30px;
+            }
+        }
+        
+        input {
+            width: 100%;
+            min-width: 220px;
+            height: 59px;
+            position: relative;
+            display: block;
+            padding: 13px 10px 13px 20px;
+            border-radius: 36px;
+            background: white;
+
+            @media (max-width: 1000px) {
+                width: 100%;
+                max-width: 700px;
+            }
+        }
+        .inputBtn {
+            width: 39px;
+            height: 39px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: $yellow_light;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .menuWrap {
+        display: flex;
+        justify-content: space-between;
+    }
+    .contactWrap {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+
+        h4 {
+            font-weight: 600;
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        span {
+            display: block;
+        }
+
+        .priceList {
+            button {
+                margin-bottom: 20px;
+            }
+        }
+
+        .logos {
+            display: flex;
+            gap: 10px;
+        }
+        .connect {
+            font-weight: 400;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .number {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .time {
+            font-weight: 300;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .call {
+            font-weight: 400;
+            font-size: 10px;
+            text-decoration-line: underline;
+            margin-bottom: 25px;
+        }
+        .email {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .anyTime {
+            font-weight: 300;
+            font-size: 12px;
+            margin-bottom: 25px;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@import '../../App/vars.scss';
+
+.Basket {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+
+    .icon {
+        position: relative;
+
+        @media (max-width: 900px) {
+            width: 21px;
+        }
+    }
+    .quantity {
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        top: -6px;
+        right: -14px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: white;
+        background: $yellow_light;
+        border-radius: 50%;
+        box-shadow: 0 0 0 3px white;
+        padding: 2px 0;
+
+        @media (max-width: 900px) {
+            width: 17px;
+            height: 17px;
+            font-size: 10px;
+            line-height: 12px;
+        }
+    }
+
+    .title {
+        display: block;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 150%;
+    }
+
+    .sum {
+        display: block;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 150%;
+    }
+}

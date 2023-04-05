@@ -1,0 +1,19 @@
+@import '../../App/vars.scss';
+
+.Breadcrumbs {
+    display: flex;
+    gap: 10px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 120%;
+    color: $grey_dark;
+    margin-top: 45px;
+    margin-bottom: 50px;
+
+    .crumb {
+        cursor: pointer;
+    }
+    .stick {
+        padding-left: 7px;
+    }
+}

@@ -1,0 +1,48 @@
+.BasketPage {
+    margin-bottom: 100px;
+
+    h1 {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 120%;
+        margin-bottom: 50px;
+
+        @media (max-width: 900px) {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+    }
+    
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .sum {
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 130%;
+
+            @media (max-width: 700px) {
+                margin-bottom: 25px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .closeIcon {
+        top: 35px;
+        right: 35px;
+        background: red;
+    }
+
+    .empty {
+        display: block;
+        text-align: center;
+        font-weight: 400;
+        font-size: 30px;
+    }
+}
