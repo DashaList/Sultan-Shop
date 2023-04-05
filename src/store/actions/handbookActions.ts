@@ -6,7 +6,7 @@ import { AppDispatch } from "../store";
 export const fetchHandbook = () => async (dispatch: AppDispatch) => {
     try {
         dispatch(handbookSlice.actions.handbookFetching())
-        const response = await axios.get<ProductResponse>('https://dashalist.github.io/Sultan-Shop/products.json')
+        const response = await axios.get<ProductResponse>('https://raw.githubusercontent.com/DashaList/Sultan-Shop/main/db.json')
         dispatch(handbookSlice.actions.handbookFetchingSuccess({
             products: response.data.results,
             count: response.data.count

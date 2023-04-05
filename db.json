@@ -2,7 +2,7 @@
   "count": 10,
   "results": [
     {
-      "imgUrl": "src/assets/img/products/product_1.jpg",
+      "imgUrl": "https://raw.githubusercontent.com/DashaList/Sultan-Shop/main/src/assets/img/products/product_1.jpg",
       "name": "Средство для мытья посуды Crystal",
       "sizeType": "Volume",
       "size": 450,
