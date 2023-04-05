@@ -4,6 +4,6 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/Sultan-Shop/',
+  base: '/Sultan-Shop/', 
   plugins: [react(), svgr()],
 })
