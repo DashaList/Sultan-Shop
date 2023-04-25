@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IProduct, ProductResponse } from "../../types/types";
+import { ProductResponse } from "../../types/types";
 import { handbookSlice } from "../reducers/handbookSlice";
 import { AppDispatch } from "../store";
 

@@ -11,7 +11,7 @@ import visa from '../../assets/img/svg/visa-icon.svg'
 import mastercard from '../../assets/img/svg/mastercard-icon.svg'
 import Button from '../UI/Button/Button'
 import classNames from 'classnames'
-import { useWindowWidth } from '@react-hook/window-size'
+import { useWindowWidth } from '../../hooks/redux'
 
 const Footer = () => {
 
@@ -35,6 +35,7 @@ const Footer = () => {
             </div>}
            <Button name='Прайс-лист' img={downloadIcon} type='Large'></Button>
           </div>}
+          
           <p className={style.desc}>Компания «Султан» — снабжаем розничные магазины товарами "под ключ" в Кокчетаве и Акмолинской области</p>
           <span className={style.subscribe}>Подпишись на скидки и акции</span>
           <div className={style.email}>

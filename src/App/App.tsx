@@ -4,7 +4,7 @@ import Header from '../components/Header/Header'
 import AppRouter from './AppRouter'
 import HeaderNav from '../components/HeaderNav/HeaderNav'
 import Footer from '../components/Footer/Footer'
-import AdminButton from '../components/AdminButton/AdminButton'
+import AdminButton from '../components/UI/AdminButton/AdminButton'
 
 function App() {
 

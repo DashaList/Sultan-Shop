@@ -1,15 +1,15 @@
 import React from 'react'
-import style from './Call.module.scss'
+import style from './CallRequest.module.scss'
 import photo from '../../assets/img/call-photo.jpg'
 import classNames from 'classnames'
 
-const Call = () => {
+const CallRequest = () => {
   return (
     <div className={style.Call}>
-      <div className="Call_left">
+      <div>
         <span className={style.tel}>+7 (777) 490-00-91</span>
         <span className={style.workTime}>время работы: 9:00-20:00</span>
-        <a href="!#" className={style.makeCall}>Заказать звонок</a>
+        <a href="!#" className={style.requestCall}>Заказать звонок</a>
       </div>
       <div className={classNames(style.photo, style.active)}>
         <img src={photo} alt="" />
@@ -18,4 +18,4 @@ const Call = () => {
   )
 }
 
-export default Call
+export default CallRequest

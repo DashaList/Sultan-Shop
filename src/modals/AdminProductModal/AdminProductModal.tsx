@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import style from './AdminProductModal.module.scss'
-import classNames from 'classnames';
 import { IAdminProduct, IProduct } from '../../types/types';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import Button from '../../components/UI/Button/Button';
@@ -14,8 +13,7 @@ interface AdminProductModalProps {
 
 const AdminProductModal: React.FC<AdminProductModalProps> = ({setActive, product}) => {
 
-    const {manufacturer, careType} = useAppSelector( state => state.handbookReducer)
-    const {adminProducts} = useAppSelector( state => state.adminReducer)
+    const {careType} = useAppSelector( state => state.handbookReducer)
     const {register, handleSubmit} = useForm<IAdminProduct>()
 
     const dispatch = useAppDispatch()
@@ -39,8 +37,6 @@ const AdminProductModal: React.FC<AdminProductModalProps> = ({setActive, product
         else dispatch(adminSlice.actions.adminAdd({product: newProduct}))
 
         setActive(false)
-        //setProduct(product)
-
     }
 
     const [sizeStr, setSizeStr] = useState(product?.sizeType == "Volume" ? "мл" : product?.sizeType == 'Weight' ?  "г" : '')
@@ -48,17 +44,6 @@ const AdminProductModal: React.FC<AdminProductModalProps> = ({setActive, product
     const radioHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSizeStr((e.target.value === "Volume") ? " мл" : " г");
     }
-
-    if (product) {
-        const myFile = new File(['product'], product?.imgUrl, {
-        type: 'image/png, image/jpeg',
-        lastModified: new Date().getTime(),
-        });
-
-        const dataTransfer = new DataTransfer();
-        dataTransfer.items.add(myFile);
-    }
-
 
     const buttonName = product ? 'Изменить товар' : 'Добавить товар'
     const titleName = product ? 'Редактировать товар' : 'Добавить товар'
@@ -69,7 +54,7 @@ const AdminProductModal: React.FC<AdminProductModalProps> = ({setActive, product
 
         <form onSubmit={handleSubmit(onSubmit)}>
             <label className={style.label} htmlFor="name">Название продукта</label>
-            <input required type="text" id="name" {...register('name')} defaultValue={product?.name}/>
+            <input data-testid='name-input' required type="text" id="name" {...register('name')} defaultValue={product?.name}/>
 
             <label className={style.label} htmlFor="manufacturer">Производитель</label>
             <input required type="text" id="manufacturer" {...register('manufacturer')} defaultValue={product?.manufacturer}/>
@@ -108,7 +93,6 @@ const AdminProductModal: React.FC<AdminProductModalProps> = ({setActive, product
                     </div>
                 )}
             </div>
-
 
             <div className={style.image}>
                 <label className={style.label} htmlFor="image">Изображение товара</label>

@@ -1,5 +1,4 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import productReducer from './reducers/productSlice'
 import handbookReducer from './reducers/handbookSlice'
 import basketReducer from './reducers/basketSlice'
 import adminReducer from './reducers/adminSlice'
@@ -25,7 +24,6 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-  productReducer,
   handbookReducer,
   basketReducer,
   adminReducer
@@ -47,6 +45,10 @@ export const setupStore = () => {
 
 export const store = setupStore()
 export const persistor = persistStore(store)
+
+export const getStoreWithState = (preloadedState?: RootState) => {
+  return configureStore({reducer: rootReducer, preloadedState})
+}
 
 export type RootState = ReturnType<typeof rootReducer>
 export type AppStore = ReturnType<typeof setupStore>

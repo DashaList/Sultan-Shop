@@ -1,5 +1,5 @@
-import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
-import { IBasketProduct, IFilter, IProduct } from "../../types/types"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IFilter, IProduct } from "../../types/types"
 
 interface AdminState {
     adminProducts: IProduct[];
@@ -41,16 +41,6 @@ export const adminSlice = createSlice({
         adminProductsFetchingError(state, action: PayloadAction<Error>) {
             state.loading = false;
             state.error = "Не удалось загрузить каталог товаров";
-        },
-
-
-        adminAddAll(state, action: PayloadAction<AdminPayloadAll>) {
-            state.adminProducts = action.payload.products
-            state.adminProductsContainer = action.payload.products
-        },
-        adminRemoveAll(state, action: PayloadAction<AdminPayloadAll>) {
-            state.adminProducts = []
-            state.adminProductsContainer = []
         },
 
         adminAdd(state, action: PayloadAction<AdminPayload>) {

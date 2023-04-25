@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useAppDispatch, useAppSelector } from '../../hooks/redux'
-import { IFilter, IProduct } from '../../types/types'
-import { productSlice } from '../../store/reducers/productSlice'
+import { useAppDispatch, useAppSelector, useWindowWidth } from '../../hooks/redux'
+import { IFilter } from '../../types/types'
 import MultipleChecks from '../MultipleChecks/MultipleChecks'
 import Button from '../UI/Button/Button'
 import style from './Filters.module.scss'
@@ -10,7 +9,6 @@ import arrowUp from '../../assets/img/svg/arrow-up.svg'
 import {adminSlice} from '../../store/reducers/adminSlice'
 import classNames from 'classnames'
 import deleteIcon from '../../assets/img/svg/delete-icon.svg'
-import { useWindowWidth } from '@react-hook/window-size'
 
 interface FiltersProps {
   filter: IFilter;
@@ -22,23 +20,21 @@ interface FiltersProps {
 const Filters: React.FC<FiltersProps> = ({filter, setFilter, careTypeSelect, setCareTypeSelect}) => {
 
   const {manufacturer, careType} = useAppSelector( state => state.handbookReducer)
-  const {adminProducts} = useAppSelector( state => state.adminReducer)
   const dispatch = useAppDispatch()
 
   const [currentFilter, setCurrentFilter] = useState(filter)
 
   useEffect( () => {
     dispatch(adminSlice.actions.adminFilter(filter))
-    dispatch(productSlice.actions.filter(filter))
   }, [filter])
 
   
-  const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const priceChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const name = e.currentTarget.name;
     setCurrentFilter({...currentFilter, price: {...currentFilter.price, [name]: +e.currentTarget.value}})
   }
 
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const checkboxChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const checked = e.target.checked;
 
@@ -54,7 +50,7 @@ const Filters: React.FC<FiltersProps> = ({filter, setFilter, careTypeSelect, set
     setFilter(currentFilter)
   }
 
-  const handleCareTypeChange = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const careTypeChangeHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     setFilter({...filter, careType: e.currentTarget.name})
     setCareTypeSelect(e.currentTarget.name)
   }
@@ -89,14 +85,14 @@ const Filters: React.FC<FiltersProps> = ({filter, setFilter, careTypeSelect, set
         <div className={style.price}>
           <span className={style.priceText}>Цена <span>₸</span></span>
           <div className={style.priceNumbers}>
-            <input type="text" defaultValue={0} name='from' onInput={handlePriceChange}/>
+            <input type="text" defaultValue={0} name='from' onInput={priceChangeHandler}/>
             <span>-</span>
-            <input type="text" defaultValue={10000} name='to' onInput={handlePriceChange}/>
+            <input type="text" defaultValue={10000} name='to' onInput={priceChangeHandler}/>
           </div>
         </div>
 
         <div className={style.manufacturer}>
-          <MultipleChecks name='manufacturer' options={manufacturer} onChange={handleCheckboxChange}></MultipleChecks>
+          <MultipleChecks name='manufacturer' options={manufacturer} onChange={checkboxChangeHandler}></MultipleChecks>
         </div>
 
         <div className={style.buttons}>
@@ -108,7 +104,7 @@ const Filters: React.FC<FiltersProps> = ({filter, setFilter, careTypeSelect, set
       <div className={style.careType}>
         {careType.map( item =>
           <div key={item} className={style.careItem}>
-            <button onClick={handleCareTypeChange} name={item}
+            <button onClick={careTypeChangeHandler} name={item}
              className={classNames(style.careBtn, careTypeSelect == item ? style.active : null)}>{item}</button>
           </div>
         )}

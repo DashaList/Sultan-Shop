@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { IProduct } from '../../types/types';
 import Button from '../UI/Button/Button';
@@ -23,9 +23,7 @@ const BasketProduct: React.FC<BasketProductProps> = ({product}) => {
     size += (product.sizeType.toString() === "Volume") ? " мл" : " г";
 
     const navigate = useNavigate();
-    const clickHandler = () => navigate(`${PRODUCT_ROUTE}/${product.barcode}`)
 
-    //const [count, setCount] = useState(0)
     let count = 0
     basketProducts.forEach((item, index) => {
         if (item.product.barcode == product.barcode) count = item.count
@@ -38,7 +36,6 @@ const BasketProduct: React.FC<BasketProductProps> = ({product}) => {
 
     const removeHandler = () => {
         dispatch(basketSlice.actions.basketRemove({barcode: product.barcode}))
-        console.log('removeHandler', basketProducts)
     }
 
   return (
@@ -56,7 +53,7 @@ const BasketProduct: React.FC<BasketProductProps> = ({product}) => {
                     </div>
                     <span>{size}</span>
                 </div>
-                <div className={style.name} onClick={clickHandler}>
+                <div className={style.name} onClick={() => navigate(`${PRODUCT_ROUTE}/${product.barcode}`)}>
                     <span>{product.brand} </span>
                     {product.name}
                 </div>

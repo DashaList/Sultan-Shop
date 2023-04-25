@@ -1,12 +1,10 @@
 import React from 'react'
 import style from './Button.module.scss'
 
-
 interface ButtonProps {
   name: string;
   img: string;
   type: string;
-  //onClickProps?: (e: React.ChangeEvent<HTMLInputElement>) => void
   onClickProps?: React.MouseEventHandler<HTMLButtonElement>
 }
 

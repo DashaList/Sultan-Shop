@@ -4,14 +4,12 @@ import { IProduct } from "../../types/types"
 interface HandbookState {
     loading: boolean;
     manufacturer: string[];
-    //manufacturerQty: Map<string, Number>;
     careType: string[]
 }
 
 const initialState: HandbookState  = {
     loading: false,
     manufacturer: [],
-    //manufacturerQty: new Map(),
     careType: []
 }
 
@@ -33,10 +31,6 @@ export const handbookSlice = createSlice({
         handbookFetchingSuccess(state, action: PayloadAction<ProductPayload>) {
             state.loading = false;
             state.manufacturer = Array.from(new Set(action.payload.products.map(item => item.manufacturer)))
-            // state.manufacturer.forEach(item => {
-            //     const value = action.payload.products.filter(el => el.manufacturer == item).length
-            //     state.manufacturerQty.set(item, value)
-            // })
 
             let careTypeSet = new Set<string>();
             action.payload.products.forEach(element => {

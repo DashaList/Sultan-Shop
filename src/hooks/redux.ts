@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { IProduct } from "../types/types";
 import { AppDispatch, RootState } from "../store/store";
@@ -48,4 +48,22 @@ export const useSortProducts = (products: IProduct[]) => {
         setSelectedSort,
         sortedProducts
     }
+}
+
+export const useWindowWidth = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    
+      useEffect(() => {
+        const handleWindowResize = () => {
+          setWindowWidth(window.innerWidth);
+        };
+    
+        window.addEventListener('resize', handleWindowResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleWindowResize);
+        };
+      });
+
+    return windowWidth;
 }

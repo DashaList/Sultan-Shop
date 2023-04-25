@@ -1,10 +1,10 @@
 import React from 'react'
 import { IProduct } from '../../types/types'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import ReactPaginate from 'react-paginate';
 import style from './AdminProductList.module.scss'
 import AdminProduct from '../AdminProduct/AdminProduct';
-import { useWindowWidth } from '@react-hook/window-size';
+import { useWindowWidth } from '../../hooks/redux';
 
 interface AdminProductsListProps {
   products: IProduct[];
@@ -15,6 +15,7 @@ interface AdminProductsListProps {
 const AdminProductsList: React.FC<AdminProductsListProps> = ({products, loading, error}) => {
 
   const windowWidth = useWindowWidth()
+  
   let perPage: number;
   if (windowWidth <= 520) perPage = 15
   else if (windowWidth <= 900) perPage = 10

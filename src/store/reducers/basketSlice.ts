@@ -29,10 +29,8 @@ export const basketSlice = createSlice({
             if (foundProduct) {
                 foundProduct.count += 1;
             } else {
-                //state.basketProducts.push({...action.payload.basketProduct, count: count++})
                 state.basketProducts.push({product: action.payload.product,
                 count: 1})
-                //state.basketProducts.push(action.payload.product)
             }
         },
 
@@ -47,8 +45,7 @@ export const basketSlice = createSlice({
                 if (item.product.barcode == action.payload.barcode) {
                     if (item.count > 1) item.count--
                     if (item.count == 1) state.basketProducts.splice(index, 1)
-                    //item.count = (item.count > 0) ? item.count - 1 : 0
-                } //item.co state.basketProducts.splice(index, 1)
+                }
             })
         }
     }

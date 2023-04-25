@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import BasketProduct from '../components/BasketProduct/BasketProduct'
-import Button from '../components/UI/Button/Button'
-import { useAppDispatch, useAppSelector } from '../hooks/redux'
-import {basketSlice} from '../store/reducers/basketSlice'
+import React, { useState } from 'react'
+import BasketProduct from '../../components/BasketProduct/BasketProduct'
+import Button from '../../components/UI/Button/Button'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux'
+import {basketSlice} from '../../store/reducers/basketSlice'
 import style from './BasketPage.module.scss'
 import './BasketPage.module.scss'
-import '../App/App.scss'
-import BasketModal from '../modals/BasketModal/BasketModal'
+import '../../App/App.scss'
+import BasketModal from '../../modals/BasketModal/BasketModal'
 import Modal from 'react-responsive-modal'
-import close from '../assets/img/svg/close-icon.svg'
-import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs'
+import close from '../../assets/img/svg/close-icon.svg'
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs'
 
 const BasketPage = () => {
 
@@ -52,7 +52,6 @@ const BasketPage = () => {
       <Modal open={modalActive} onClose={() => setModalActive(false)} center closeIcon={closeIcon} classNames={{closeButton: style.closeIcon}}>
         <BasketModal></BasketModal>
       </Modal>
-      {/* {modalActive && <BasketModal setActive={setModalActive}></BasketModal>} */}
     </div>
   )
 }

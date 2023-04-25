@@ -1,26 +1,22 @@
 import React from 'react'
-import ProductList from '../components/ProductList/ProductList'
+import ProductList from '../../components/ProductList/ProductList'
 import style from './CatalogPage.module.scss'
-import '../App/App.scss'
+import '../../App/App.scss'
 import { useEffect, useState } from 'react'
-import { fetchProducts } from '../store/actions/productActions'
-import { useAppDispatch, useAppSelector, useSortProducts } from '../hooks/redux'
-import Filters from '../components/Filters/Filters'
-import { fetchHandbook } from '../store/actions/handbookActions'
-import { IFilter } from '../types/types'
-import {productSlice} from '../store/reducers/productSlice'
-import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs'
-import {adminSlice} from '../store/reducers/adminSlice'
-import { fetchAdminProducts } from '../store/actions/adminActions'
+import { useAppDispatch, useAppSelector, useSortProducts, useWindowWidth } from '../../hooks/redux'
+import Filters from '../../components/Filters/Filters'
+import { fetchHandbook } from '../../store/actions/handbookActions'
+import { IFilter } from '../../types/types'
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs'
+import {adminSlice} from '../../store/reducers/adminSlice'
+import { fetchAdminProducts } from '../../store/actions/adminActions'
 import classNames from 'classnames'
-import { useWindowWidth } from '@react-hook/window-size'
 
 
 function CatalogPage() {
   
-  const {products, loading, error} = useAppSelector( state => state.productReducer)
-  const {adminProducts} = useAppSelector(state => state.adminReducer)
-  const {manufacturer, careType} = useAppSelector( state => state.handbookReducer)
+  const {adminProducts, loading, error} = useAppSelector(state => state.adminReducer)
+  const {careType} = useAppSelector( state => state.handbookReducer)
   const dispatch = useAppDispatch()
 
   const [filter, setFilter] = useState<IFilter>({
@@ -32,19 +28,14 @@ function CatalogPage() {
     careType: ''
   })
 
+
   useEffect( () => {
     dispatch(fetchHandbook())
-    dispatch(fetchProducts())
-    //if (!adminProducts) dispatch(fetchAdminProducts())
     if (adminProducts.length < 1) {
       dispatch(fetchAdminProducts())
-      // dispatch(adminSlice.actions.adminAddAll({products}))
-      // dispatch(adminSlice.actions.filter(filter)) 
     }
     
     dispatch(adminSlice.actions.adminFilter(filter))
-    dispatch(productSlice.actions.filter(filter))
-    //console.log('apFil', adminProducts)
   
   }, [])
 
@@ -58,11 +49,10 @@ function CatalogPage() {
 
   const [careTypeSelect, setCareTypeSelect] = useState('')
 
-  const handleCareTypeChange = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const careTypeChangeHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     setFilter({...filter, careType: e.currentTarget.name})
     setCareTypeSelect(e.currentTarget.name)
   }
-
 
   const windowWidth = useWindowWidth()
 
@@ -91,7 +81,7 @@ function CatalogPage() {
         {windowWidth > 900 && <div className={style.careType}>
         {careType.map( item =>
           <div key={item} className={classNames(style.careItem, careTypeSelect == item ? style.active : null)}>
-            <button onClick={handleCareTypeChange} name={item}>{item}</button>
+            <button onClick={careTypeChangeHandler} name={item}>{item}</button>
           </div>
         )}
         </div>}
@@ -118,8 +108,8 @@ function CatalogPage() {
 
           </div>
           <div className={style.content}>
-            {(sortedProducts.length > 0) && <ProductList products={sortedProducts} loading={loading} error={error}></ProductList>}
-            {(sortedProducts.length < 1) && <span>Продуктов не найдено</span>}
+            {(adminProducts.length > 0) && <ProductList products={adminProducts} loading={loading} error={error}></ProductList>}
+            {(adminProducts.length < 1) && <span>Продуктов не найдено</span>}
           </div>
         </div>
       </div> 

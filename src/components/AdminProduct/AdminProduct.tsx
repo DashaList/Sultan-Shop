@@ -7,11 +7,11 @@ import deleteIcon from '../../assets/img/svg/delete-icon.svg'
 import editIcon from '../../assets/img/svg/edit.svg'
 import VolumeIcon from '../../assets/img/svg/Volume-icon.svg'
 import WeightIcon from '../../assets/img/svg/Weight-icon.svg'
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { useAppDispatch } from '../../hooks/redux';
 import {adminSlice} from '../../store/reducers/adminSlice';
 import { PRODUCT_ROUTE } from '../../utils/consts';
 import Modal from 'react-responsive-modal';
-import AdminProductModal from '../../modals/AddProductModal/AdminProductModal';
+import AdminProductModal from '../../modals/AdminProductModal/AdminProductModal';
 
 interface AdminProductProps {
     product: IProduct;
@@ -19,20 +19,13 @@ interface AdminProductProps {
 
 const AdminProduct: React.FC<AdminProductProps> = ({product}) => {
 
-  const {adminProducts} = useAppSelector( state => state.adminReducer)
   const dispatch = useAppDispatch()
 
   const removeHandler = () => {
     dispatch(adminSlice.actions.adminRemove({product}))
-    //console.log('addHandler', adminProducts)
-  }
-
-  const editHandler = () => {
-    dispatch(adminSlice.actions.adminEdit({product}))
   }
 
   const navigate = useNavigate();
-  const clickHandler = () => navigate(`${PRODUCT_ROUTE}/${product.barcode}`)
 
   const [addModalActive, setAddModalActive] = useState(false)
 
@@ -41,12 +34,11 @@ const AdminProduct: React.FC<AdminProductProps> = ({product}) => {
 
   return (
     <div className={style.Product}>
-        <button className={style.edit} onClick={() => setAddModalActive(true)}>
+        <button data-testid='edit-btn' className={style.edit} onClick={() => setAddModalActive(true)}>
             <img src={editIcon} alt="" />
         </button>
         <div className={style.productImg}>
           <img src={product.imgUrl} alt="" />
-          {/* <img src={`/src/assets/img/products${product.imgUrl}`} alt="" /> */}
         </div>
         <div className={style.size}>
           <div className="">
@@ -55,16 +47,17 @@ const AdminProduct: React.FC<AdminProductProps> = ({product}) => {
           </div>
           <span>{size}</span>
         </div>
-        <div className={style.name} onClick={clickHandler}>
+        <div data-testid='name' className={style.name} onClick={() => navigate(`${PRODUCT_ROUTE}/${product.barcode}`)}>
           <span>{product.brand} </span>
-          {product.name}</div>
+          {product.name}
+        </div>
         
         <div className={style.bottom}>
           <div className={style.desc}>
             Штрихкод:
             <span> {product.barcode}</span>
           </div>
-          <div className={style.desc}>
+          <div data-testid='manufacturer' className={style.desc}>
             Производитель:
             <span> {product.manufacturer}</span>
           </div>
@@ -72,14 +65,14 @@ const AdminProduct: React.FC<AdminProductProps> = ({product}) => {
             Бренд:
             <span> {product.brand}</span>
           </div>
-          <div className={style.desc}>
+          <div data-testid='careTypes' className={style.desc}>
             Типы ухода:
             <span> {product.careTypes.map((item,index) =>
               <span key={item}>{`${item.toLowerCase() + (index === product.careTypes.length-1 ? "" : ",")}`} </span>)}
             </span>
           </div>
-          <div className={style.price}>
-              <div className="">{product.price} ₸</div>
+          <div data-testid='price-wrap' className={style.price}>
+              <div >{product.price} ₸</div>
               <Button name='' img={deleteIcon} type={'Small'} onClickProps={removeHandler}></Button>
           </div>
         </div>

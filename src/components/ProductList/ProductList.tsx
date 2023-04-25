@@ -1,10 +1,10 @@
 import React, { useRef } from 'react'
 import { IProduct } from '../../types/types'
 import Product from '../Product/Product'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import ReactPaginate from 'react-paginate';
 import style from './ProductList.module.scss'
-import { useWindowWidth } from '@react-hook/window-size';
+import { useWindowWidth } from '../../hooks/redux';
 
 interface ProductListProps {
   products: IProduct[];
@@ -15,6 +15,7 @@ interface ProductListProps {
 const ProductList: React.FC<ProductListProps> = ({products, loading, error}) => {
   
   const windowWidth = useWindowWidth()
+  
   let perPage: number;
   if (windowWidth <= 520) perPage = 15
   else if (windowWidth <= 720) perPage = 10

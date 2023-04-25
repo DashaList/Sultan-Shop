@@ -1,48 +1,34 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Button from '../components/UI/Button/Button'
-import { useAppDispatch, useAppSelector } from '../hooks/redux'
-import { IProduct, ProductResponse } from '../types/types'
-import { fetchProducts } from '../store/actions/productActions'
+import Button from '../../components/UI/Button/Button'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux'
+import { IProduct} from '../../types/types'
 import style from './ProductPage.module.scss'
-import '../App/App.scss'
-import VolumeIcon from '../assets/img/svg/Volume-icon.svg'
-import WeightIcon from '../assets/img/svg/Weight-icon.svg'
-import basketIcon from '../assets/img/svg/basket-white.svg'
-import share from '../assets/img/svg/share-icon.svg'
-import download from '../assets/img/svg/download-black.svg'
-import triangleUp from '../assets/img/svg/triangle-up.svg'
-import triangleDown from '../assets/img/svg/triangle-down.svg'
-import {basketSlice} from '../store/reducers/basketSlice'
-import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs'
-
+import '../../App/App.scss'
+import VolumeIcon from '../../assets/img/svg/Volume-icon.svg'
+import WeightIcon from '../../assets/img/svg/Weight-icon.svg'
+import basketIcon from '../../assets/img/svg/basket-white.svg'
+import share from '../../assets/img/svg/share-icon.svg'
+import download from '../../assets/img/svg/download-black.svg'
+import triangleUp from '../../assets/img/svg/triangle-up.svg'
+import triangleDown from '../../assets/img/svg/triangle-down.svg'
+import {basketSlice} from '../../store/reducers/basketSlice'
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs'
 
 
 const ProductPage = () => {
   
   const params = useParams()
-  console.log(params.barcode)
 
   const {adminProducts} = useAppSelector(state => state.adminReducer)
 
   const [product, setProduct] = useState<IProduct>()
-  const [loading, setLoading] = useState(true)
 
   const {basketProducts} = useAppSelector( state => state.basketReducer)
   const dispatch = useAppDispatch()
 
-  // async function fetchProduct() {
-  //   const response = await axios.get<ProductResponse>('../../products.json')
-  //   const product = response.data.results.find(item => item.barcode.toString() == params.barcode)
-  //   setProduct(product)
-  //   setLoading(false)
-  // }
-
-
 
   useEffect(() => {
-    //fetchProduct()
     setProduct(adminProducts.find(item => item.barcode.toString() == params.barcode))
   }, [])
 
@@ -53,8 +39,6 @@ const ProductPage = () => {
   
   let size: string | undefined = product?.size.toString();
   size += (product?.sizeType.toString() === 'Volume') ? " мл" : " г";
-
-  //if (loading) return <p>Идёт загрузка</p>
   
 
   let count = 0

@@ -4,8 +4,8 @@ import place from '../../assets/img/svg/place-icon.svg'
 import mail from '../../assets/img/svg/mail-icon.svg'
 import burger from '../../assets/img/svg/burger-icon.svg'
 import logo from '../../assets/img/svg/logo-dark-small.svg'
-import { useWindowWidth } from '@react-hook/window-size'
 import HeaderBasket from '../HeaderBasket/HeaderBasket'
+import { useWindowWidth } from '../../hooks/redux'
 
 const HeaderNav = () => {
 

@@ -10,7 +10,7 @@ interface MultipleChecksProps {
 
 const MultipleChecks: React.FC<MultipleChecksProps> = ({name, options, onChange}) => {
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e)
   }
 
@@ -31,21 +31,22 @@ const MultipleChecks: React.FC<MultipleChecksProps> = ({name, options, onChange}
 
   const searchClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-
     setSearchedOptions(options.filter(item => item.toLowerCase().includes(currentValue.toLowerCase())))
   }
 
   return (
     <div className={style.Checks}>
       <Search onChangeProps={searchChangeHandler} onClickProps={searchClickHandler}></Search>
+
       <div className={style.checkList}>
         {searchedOptions.map( item =>
           <div key={item} className={style.item}>
-              <input type="checkbox" name={name} value={item} onChange={handleChange}/>
-              <label htmlFor="">{item}</label>
+              <input id={item} type="checkbox" name={name} value={item} onChange={changeHandler}/>
+              <label htmlFor={item}>{item}</label>
           </div>
         )}
-      </div>    
+      </div>
+      
     </div>
   )
 }

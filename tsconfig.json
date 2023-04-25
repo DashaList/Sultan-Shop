@@ -14,7 +14,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": ["node", "jest", "@testing-library/jest-dom", "@wdio/globals/types", "@wdio/mocha-framework", "expect-webdriverio"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

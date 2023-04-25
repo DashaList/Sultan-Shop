@@ -6,9 +6,10 @@ import style from './Product.module.scss';
 import VolumeIcon from '../../assets/img/svg/Volume-icon.svg'
 import WeightIcon from '../../assets/img/svg/Weight-icon.svg'
 import basketIcon from '../../assets/img/svg/basket-white.svg'
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { useAppDispatch} from '../../hooks/redux';
 import {basketSlice} from "../../store/reducers/basketSlice";
 import { PRODUCT_ROUTE } from '../../utils/consts';
+
 
 interface ProductProps {
     product: IProduct;
@@ -16,17 +17,13 @@ interface ProductProps {
 
 const Product: React.FC<ProductProps> = ({product}) => {
 
-  const {basketProducts} = useAppSelector( state => state.basketReducer)
   const dispatch = useAppDispatch()
 
   const addHandler = () => {
     dispatch(basketSlice.actions.basketAdd({product}))
-    console.log('addHandler', basketProducts)
   }
 
   const navigate = useNavigate();
-
-  const clickHandler = () => navigate(`${PRODUCT_ROUTE}/${product.barcode}`)
 
   let size: string = product.size.toString();
   size += (product.sizeType.toString() === 'Volume') ? " мл" : " г";
@@ -43,7 +40,7 @@ const Product: React.FC<ProductProps> = ({product}) => {
           </div>
           <span>{size}</span>
         </div>
-        <div className={style.name} onClick={clickHandler}>
+        <div className={style.name} onClick={() => navigate(`${PRODUCT_ROUTE}/${product.barcode}`)}>
           <span>{product.brand} </span>
           {product.name}</div>
         

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { ADMIN_ROUTE } from '../../utils/consts';
+import { ADMIN_ROUTE } from '../../../utils/consts';
 import style from './AdminButton.module.scss'
 
 const AdminButton = () => {
