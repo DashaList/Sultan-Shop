@@ -108,8 +108,8 @@ function CatalogPage() {
 
           </div>
           <div className={style.content}>
-            {(adminProducts.length > 0) && <ProductList products={adminProducts} loading={loading} error={error}></ProductList>}
-            {(adminProducts.length < 1) && <span>Продуктов не найдено</span>}
+            {(sortedProducts.length > 0) && <ProductList products={sortedProducts} loading={loading} error={error}></ProductList>}
+            {(sortedProducts.length < 1) && <span>Продуктов не найдено</span>}
           </div>
         </div>
       </div> 
